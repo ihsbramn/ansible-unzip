@@ -1,0 +1,14 @@
+---
+- name: Install unzip
+  hosts: web_servers
+  become: yes 
+
+  tasks:
+    - name: Update package cache
+      apt:
+        update_cache: yes
+
+    - name: Install unzip
+      package:
+        name: unzip
+        state: present
